@@ -1,0 +1,93 @@
+==8956== Memcheck, a memory error detector
+==8956== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==8956== Using Valgrind-3.17.0.GIT-lbmacos-adaae87a41-20201121 and LibVEX; rerun with -h for copyright info
+==8956== Command: ./a.out
+==8956== Parent PID: 88185
+==8956== 
+--8956-- 
+--8956-- Valgrind options:
+--8956--    --leak-check=full
+--8956--    --show-leak-kinds=all
+--8956--    --track-origins=yes
+--8956--    --verbose
+--8956--    --log-file=valgrind-out.txt
+--8956-- Output from sysctl({CTL_KERN,KERN_VERSION}):
+--8956--   Darwin Kernel Version 20.2.0: Wed Dec  2 20:39:59 PST 2020; root:xnu-7195.60.75~1/RELEASE_X86_64
+--8956-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--8956-- Page sizes: currently 4096, max supported 4096
+--8956-- Valgrind library directory: /usr/local/Cellar/valgrind/HEAD-adaae87/lib/valgrind
+--8956-- ./a.out (rx at 0x100000000, rw at 0x100004000)
+--8956--    reading syms   from primary file (15 291)
+--8956--    dSYM= ./a.out.dSYM/Contents/Resources/DWARF/a.out
+--8956--    reading dwarf3 from dsyms file
+--8956-- /usr/lib/dyld (rx at 0x100010000, rw at 0x1000ac000)
+--8956--    reading syms   from primary file (5 2886)
+--8956-- Scheduler: using generic scheduler lock implementation.
+--8956-- Reading suppressions file: /usr/local/Cellar/valgrind/HEAD-adaae87/lib/valgrind/default.supp
+==8956== embedded gdbserver: reading from /var/folders/td/5z05w3k54pn_530cb51r3sp40000gn/T//vgdb-pipe-from-vgdb-to-8956-by-raulescobar-on-???
+==8956== embedded gdbserver: writing to   /var/folders/td/5z05w3k54pn_530cb51r3sp40000gn/T//vgdb-pipe-to-vgdb-from-8956-by-raulescobar-on-???
+==8956== embedded gdbserver: shared mem   /var/folders/td/5z05w3k54pn_530cb51r3sp40000gn/T//vgdb-pipe-shared-mem-vgdb-8956-by-raulescobar-on-???
+==8956== 
+==8956== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==8956== don't want to do, unless you know exactly what you're doing,
+==8956== or are doing some strange experiment):
+==8956==   /usr/local/Cellar/valgrind/HEAD-adaae87/lib/valgrind/../../bin/vgdb --pid=8956 ...command...
+==8956== 
+==8956== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==8956==   /path/to/gdb ./a.out
+==8956== and then give GDB the following command
+==8956==   target remote | /usr/local/Cellar/valgrind/HEAD-adaae87/lib/valgrind/../../bin/vgdb --pid=8956
+==8956== --pid is optional if only one valgrind process is running
+==8956== 
+--8956-- REDIR: 0x100067e00 (dyld:strcmp) redirected to 0x2580587bb (???)
+--8956-- REDIR: 0x100061df4 (dyld:arc4random) redirected to 0x258058859 (???)
+--8956-- REDIR: 0x1000671e0 (dyld:strlen) redirected to 0x25805878a (???)
+--8956-- REDIR: 0x100068100 (dyld:strcpy) redirected to 0x2580587d7 (???)
+--8956-- REDIR: 0x100065289 (dyld:strcat) redirected to 0x25805879b (???)
+--8956-- REDIR: 0x100066fd2 (dyld:strlcat) redirected to 0x2580587f4 (???)
+==8956== Warning: set address range perms: large range [0x7fff20022000, 0x80001fe22000) (defined)
+==8956== Warning: set address range perms: large range [0x7fff20022000, 0x7fff7ffa2000) (defined)
+==8956== Warning: set address range perms: large range [0x7fff8dfc6000, 0x7fffc0022000) (noaccess)
+==8956== Warning: set address range perms: large range [0x7fffc0022000, 0x7fffe22c2000) (defined)
+==8956== Warning: set address range perms: large range [0x7fffe22c2000, 0x7fffffe00000) (noaccess)
+--8956-- /usr/local/Cellar/valgrind/HEAD-adaae87/lib/valgrind/vgpreload_core-amd64-darwin.so (rx at 0x100128000, rw at 0x10012c000)
+--8956--    reading syms   from primary file (3 53)
+--8956--    dSYM= /usr/local/Cellar/valgrind/HEAD-adaae87/lib/valgrind/vgpreload_core-amd64-darwin.so.dSYM/Contents/Resources/DWARF/vgpreload_core-amd64-darwin.so
+--8956-- /usr/local/Cellar/valgrind/HEAD-adaae87/lib/valgrind/vgpreload_memcheck-amd64-darwin.so (rx at 0x100134000, rw at 0x10013c000)
+--8956--    reading syms   from primary file (75 62)
+--8956--    dSYM= /usr/local/Cellar/valgrind/HEAD-adaae87/lib/valgrind/vgpreload_memcheck-amd64-darwin.so.dSYM/Contents/Resources/DWARF/vgpreload_memcheck-amd64-darwin.so
+==8956== Conditional jump or move depends on uninitialised value(s)
+==8956==    at 0x7FFF2037495F: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF20240FFA: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF20241394: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF202AD7C0: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF202AD302: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF202A1DCF: ??? (in /dev/ttys002)
+==8956==    by 0x100002DC3: Collection<int>::print_e() const (collection.h:31)
+==8956==    by 0x10000233E: main (collection_tests.cpp:24)
+==8956==  Uninitialised value was created by a stack allocation
+==8956==    at 0x7FFF202AD2A3: ??? (in /dev/ttys002)
+==8956== 
+==8956== 
+==8956== HEAP SUMMARY:
+==8956==     in use at exit: 0 bytes in 0 blocks
+==8956==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==8956== 
+==8956== All heap blocks were freed -- no leaks are possible
+==8956== 
+==8956== ERROR SUMMARY: 22 errors from 1 contexts (suppressed: 0 from 0)
+==8956== 
+==8956== 22 errors in context 1 of 1:
+==8956== Conditional jump or move depends on uninitialised value(s)
+==8956==    at 0x7FFF2037495F: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF20240FFA: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF20241394: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF202AD7C0: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF202AD302: ??? (in /dev/ttys002)
+==8956==    by 0x7FFF202A1DCF: ??? (in /dev/ttys002)
+==8956==    by 0x100002DC3: Collection<int>::print_e() const (collection.h:31)
+==8956==    by 0x10000233E: main (collection_tests.cpp:24)
+==8956==  Uninitialised value was created by a stack allocation
+==8956==    at 0x7FFF202AD2A3: ??? (in /dev/ttys002)
+==8956== 
+==8956== ERROR SUMMARY: 22 errors from 1 contexts (suppressed: 0 from 0)

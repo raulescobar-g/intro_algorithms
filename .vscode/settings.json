@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.rmd": "markdown",
+        "iostream": "cpp",
+        "stdexcept": "cpp",
+        "ostream": "cpp",
+        "__hash_table": "cpp",
+        "__bit_reference": "cpp",
+        "algorithm": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "unordered_map": "cpp"
+    }
+}
